@@ -1,0 +1,19 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "discord.js-pagination": "^1.0.2",
+    "figlet": "^1.4.0",
+    "fs": "0.0.1-security",
+    "mathjs": "^7.0.1",
+    "path": "^0.12.7"
+  }
+}
