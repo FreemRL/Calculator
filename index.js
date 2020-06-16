@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const { readdirSync } = require('fs');
+const { readdir } = require('fs');
 
 const { join } = require('path');
 
@@ -12,7 +12,7 @@ const prefix = ';';
 //You can change the prefix if you like. It doesn't have to be !
 
 
-fs.readdir("./commands/", (err, files) => { //make sure you have a commands folder
+readdir("./commands/", (err, files) => { //make sure you have a commands folder
     if (err) return console.error(err);
     files.forEach(file => {
       if (!file.endsWith(".js")) return; //ignore non js files
