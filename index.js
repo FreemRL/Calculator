@@ -12,12 +12,15 @@ const prefix = ';';
 //You can change the prefix if you like. It doesn't have to be !
 
 
-const commandFiles = readdirSync(join(__dirname, "commands")).filter(file => file.endsWith(".js"));
-
-for (const file of commandFiles) {
-    const command = require(join(__dirname, "commands", `${file}`));
-    client.commands.set(command.name, command);
-}
+fs.readdir("./commands/", (err, files) => { //make sure you have a commands folder
+    if (err) return console.error(err);
+    files.forEach(file => {
+      if (!file.endsWith(".js")) return; //ignore non js files
+      let props = require(`./commands/${file}`); 
+      let commandName = file.split(".")[0];
+      client.commands.set(commandName, props);
+    });
+  });
 
 
 client.on("error", console.error);
