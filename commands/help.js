@@ -24,7 +24,7 @@ module.exports = {
 
         const utility = new Discord.MessageEmbed()
         .setTitle('Utlity')
-        .addField('`;calculate`', "calculates your input.")
+        .addField('`;calc`', "calculates your input.")
         .addField('`;ping`', "get your ping.")
         .setColor(0x808080)
         .setTimestamp()

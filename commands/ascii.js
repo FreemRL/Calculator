@@ -1,4 +1,4 @@
-const figlet = require('./node_modules/figlet');
+const figlet = require('figlet');
 
 module.exports = {
     name: "ascii",

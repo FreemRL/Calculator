@@ -8,8 +8,11 @@ module.exports = {
 
 
         const ping = new Discord.MessageEmbed()
-        .setDescription(`🏓\`${Date.now() - message.createdTimestamp}\`ms`)
         .setColor(0x808080)
+        .setTitle(`${message.author.username}`)
+        .addField("Ping:", `🏓\`${Date.now() - message.createdTimestamp}\`ms`)
+        .setThumbnail(message.author.displayAvatarURL())
+        .setTimestamp()
 
 
         message.channel.send(ping);

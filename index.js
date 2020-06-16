@@ -2,7 +2,9 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const { readdir } = require('fs');
+const { token } = require('./config.json');
+
+const { readdirSync } = require('fs');
 
 const { join } = require('path');
 
@@ -12,21 +14,19 @@ const prefix = ';';
 //You can change the prefix if you like. It doesn't have to be !
 
 
-readdir("./commands/", (err, files) => { //make sure you have a commands folder
-    if (err) return console.error(err);
-    files.forEach(file => {
-      if (!file.endsWith(".js")) return; //ignore non js files
-      let props = require(`./commands/${file}`); 
-      let commandName = file.split(".")[0];
-      client.commands.set(commandName, props);
-    });
-  });
+const commandFiles = readdirSync(join(__dirname, "commands")).filter(file => file.endsWith(".js"));
+
+for (const file of commandFiles) {
+    const command = require(join(__dirname, "commands", `${file}`));
+    client.commands.set(command.name, command);
+}
 
 
 client.on("error", console.error);
 
 client.on('guildCreate', guild => {
     console.log(`Joined server **${guild.name}** created by **${guild.owner.user.username}**.\n**Servers**: ${client.guilds.cache.size}\n**Users**: ${client.users.cache.size}`);
+    
 });
 
 client.on('ready', () => {
@@ -56,4 +56,4 @@ client.on("message", async message => {
     }
 })
 
-client.login(process.env.token);
+client.login(token);

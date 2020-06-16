@@ -7,7 +7,7 @@ module.exports = {
 
     async run (client, message, args){
 
-        message.channel.send(`Invite ${client.user} to your Discord Servers: https://discord.com/oauth2/authorize?client_id=718595731870449724&scope=bot&permissions=157760`);
+        message.channel.send(`Invite ${client.user} to your Discord Servers: https://discord.com/oauth2/authorize?client_id=718595731870449724&scope=bot&permissions=8`);
 
     }
 }

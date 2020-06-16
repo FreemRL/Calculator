@@ -25,7 +25,8 @@ module.exports = {
         .addField('Input', `\`\`\`css\n${args.join(' ')}\`\`\``)
         .addField('Output', `\`\`\`css\n${resp}\`\`\``)
 
-        message.channel.send(embed);
-
+        message.channel.send(embed).then(messageReaction => {
+            if(resp === 420) messageReaction.react('🍁');
+        });
     }
 }
