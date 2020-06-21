@@ -7,7 +7,7 @@ const { readdirSync } = require('fs');
 const { join } = require('path');
 
 const DBL = require("dblapi.js");
-const dbl = new DBL('Your top.gg token', client);
+const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxODU5NTczMTg3MDQ0OTcyNCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTkyNzQ3MzcwfQ.DHqmRam5VBbD3J_KlpBE8ibtkVIM8PMsGC-Oe6kMjxI', client);
 
 client.commands= new Discord.Collection();
 
