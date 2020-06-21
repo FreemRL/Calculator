@@ -2,11 +2,10 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const { token } = require('./config.json');
-
 const { readdirSync } = require('fs');
 
 const { join } = require('path');
+
 const DBL = require("dblapi.js");
 const dbl = new DBL('Your top.gg token', client);
 
@@ -58,4 +57,4 @@ client.on("message", async message => {
     }
 })
 
-client.login(token);
+client.login(process.env.token);
