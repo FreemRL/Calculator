@@ -7,6 +7,8 @@ const { token } = require('./config.json');
 const { readdirSync } = require('fs');
 
 const { join } = require('path');
+const DBL = require("dblapi.js");
+const dbl = new DBL('Your top.gg token', client);
 
 client.commands= new Discord.Collection();
 

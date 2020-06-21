@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dblapi.js": "^2.4.0",
     "discord.js": "^12.2.0",
     "discord.js-pagination": "^1.0.2",
     "figlet": "^1.4.0",
