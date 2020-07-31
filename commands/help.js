@@ -13,7 +13,7 @@ module.exports = {
         .addField('`;invite`', "get the invite link for Calculator.", true)
         .addField('`;setprefix`', "change your servers prefix.", true)
         .addField('`prefix?`', "displays your servers current prefix.", true)
-        .addField('`;count`', "creates a member count channel for your server.", true)
+        .addField('`;count (in development)`', "creates a member count channel for your server.", true)
         .addField(`Support ${client.user.username}`, `[Invite ${client.user.username}](${new URL(`https://discord.com/oauth2/authorize?client_id=718595731870449724&permissions=322640&scope=bot`)}) • [Join Support Server](${new URL(`https://discord.gg/HDfKEnK`)}) • [Vote for ${client.user.username}](${new URL(`https://top.gg/bot/718595731870449724/vote`)})`)
         .setColor(0x808080)
         .setTimestamp()
