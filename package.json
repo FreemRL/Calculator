@@ -9,12 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cpu-stat": "^2.0.1",
     "dblapi.js": "^2.4.0",
     "discord.js": "^12.2.0",
     "discord.js-pagination": "^1.0.2",
     "figlet": "^1.4.0",
     "fs": "0.0.1-security",
     "mathjs": "^7.0.1",
+    "moment": "^2.27.0",
+    "moment-timezone": "^0.5.31",
+    "ms": "^2.1.2",
+    "os": "^0.1.1",
     "path": "^0.12.7"
   }
 }

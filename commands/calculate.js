@@ -9,14 +9,14 @@ module.exports = {
 
     async run (client, message, args){
 
-        if(!args[0]) return message.channel.send('Please provide a question');
+        if(!args[0]) return message.channel.send('Please provide an input.');
 
         let resp;
 
         try {
             resp = math.evaluate(args.join(" "))
         } catch (e) {
-            return message.channel.send('Please provide a **valid** question')
+            return message.channel.send('Please provide a **valid** input.')
         }
 
         const embed = new Discord.MessageEmbed()
