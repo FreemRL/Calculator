@@ -9,7 +9,7 @@ module.exports = {
         var validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!§$%&/()=?*#-€@<>_:;";
         var inp = args[0];
         if(!inp) return message.channel.send(`You have to provide a password length! **(;passwd [number])**`);
-        if(inp < 8) return message.channel.send(`Your password length should at least be **8** characters.`);
+        if(inp < 8 || inp > 20) return message.channel.send(`Please choose a length between **8** and **20**!`);
         var passwd = "";
 
         for(var i = 0; i < inp; i++) {
