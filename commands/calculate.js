@@ -1,32 +1,32 @@
-import { create, all } from 'mathjs'
-
-const math = create(all)
-const limitedEvaluate = math.evaluate
-
-math.import({
-  'import':     function () { throw new Error('Function import is disabled') },
-  'createUnit': function () { throw new Error('Function createUnit is disabled') },
-  'evaluate':   function () { throw new Error('Function evaluate is disabled') },
-  'parse':      function () { throw new Error('Function parse is disabled') },
-  'simplify':   function () { throw new Error('Function simplify is disabled') },
-  'derivative': function () { throw new Error('Function derivative is disabled') }
-}, { override: true })
-
 const Discord = require('discord.js');
 
 module.exports = {
     name: "calc",
     description: "Get the answer to a math problem",
 
+    
+
 
     async run (client, message, args){
+        import { create, all } from 'mathjs'
+
+        const math = create(all)
+
+        math.import({
+            'import': function () { throw new Error('Function import is disabled') },
+            'createUnit': function () { throw new Error('Function createUnit is disabled') },
+            'evaluate': function () { throw new Error('Function evaluate is disabled') },
+            'parse': function () { throw new Error('Function parse is disabled') },
+            'simplify': function () { throw new Error('Function simplify is disabled') },
+            'derivative': function () { throw new Error('Function derivative is disabled') }
+        }, { override: true })
 
         if(!args[0]) return message.channel.send('Please provide an input.');
 
         let resp;
 
         try {
-            resp = limitedEval(args.join(" "))
+            resp = math.evaluate(args.join(" "))
         } catch (e) {
             return message.channel.send('Please provide a **valid** input.')
         }
