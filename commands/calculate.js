@@ -1,4 +1,6 @@
-const math = require('mathjs');
+const { create, all } = require('mathjs');
+const math = create(all);
+const limitedEval = math.evaluate;
 math.import({
     'import':     function () { throw new Error('Function import is disabled') },
     'createUnit': function () { throw new Error('Function createUnit is disabled') },
@@ -22,7 +24,7 @@ module.exports = {
         let resp;
 
         try {
-            resp = math.evaluate(args.join(" "))
+            resp = limitedEval(args.join(" "))
         } catch (e) {
             return message.channel.send('Please provide a **valid** input.')
         }
