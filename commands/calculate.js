@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const { create, all } = require('mathjs');
 
 const math = create(all)
+const limEval = math.evaluate
 
 math.import({
     'import': function () { throw new Error('Function import is disabled') },
@@ -23,7 +24,7 @@ module.exports = {
         let resp;
 
         try {
-            resp = math.evaluate(args.join(" "))
+            resp = limEval(args.join(" "))
         } catch (e) {
             return message.channel.send('Please provide a **valid** input.')
         }
