@@ -13,9 +13,6 @@ math.import({
     'derivative': function () { throw new Error('Function derivative is disabled') }
 }, { override: true })
 
-console.log(limEval('sqrt(16)'))     // Ok, 4
-console.log(limEval('parse("2+3")'))
-
 module.exports = {
     name: "calc",
     description: "Get the answer to a math problem",
